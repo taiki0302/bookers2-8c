@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'chats/show'
   get 'relationships/followings'
   get 'relationships/followers'
   devise_for :users
@@ -17,4 +18,6 @@ Rails.application.routes.draw do
   	resources :book_comments, only: [:create, :destroy]
   end
   get "searches" => "searches#search"
+  get 'chat/:id', to: 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
 end
