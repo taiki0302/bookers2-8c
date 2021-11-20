@@ -8,6 +8,7 @@ class BooksController < ApplicationController
       current_user.view_counts.create(book_id: @book.id)
     end
     @book_comment = BookComment.new
+    
   end
 
   def index
